@@ -6,9 +6,13 @@
 }
 
 .community-rules {
+  > header, > footer {
+    @include span-columns(10);
+    @include shift(1);
+  }
+
   > main article {
     @include span-columns(6);
     @include omega(2n);
   }
-
 }
