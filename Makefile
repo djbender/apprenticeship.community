@@ -5,6 +5,7 @@ run:
 
 bump:
 	echo -n "Version number? "; read vn; echo $$vn > VERSION
+	git add VERSION && git commit -m "Starting work on $$(cat VERSION)"
 
 release: clean bump build-production commit-site deploy
 
