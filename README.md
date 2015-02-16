@@ -35,3 +35,15 @@ in your web browser.
 
 If you get stuck, ask for help in the [CodeNewbie
 forum](http://discourse.codenewbie.org), or ask for help in our community.
+
+## Releasing
+Releasing assumes:
+
+1. You have make, uglifyjs, and ruby installed.
+2. You have the `_site` subdirectory initialized as a git repository pointing
+   toward `git@github.com:zincmade/apprenticeship.community.git`.
+3. You have a file named "_config_production.yml" which overrides the
+   development segment token.
+4. You have commit rights to this repository.
+
+To release, run `make release` from the repositories root directory. This will:
