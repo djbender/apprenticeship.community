@@ -12,7 +12,7 @@ $base-border-radius: 3px;
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
-button, .button {
+input[type="submit"], button, .button {
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
   background-color: $action-color;
@@ -23,7 +23,6 @@ button, .button {
   display: inline-block;
   font-family: $font-sans;
   font-weight: 600;
-  line-height: 1;
   padding: 0.75em 1em;
   text-decoration: none;
   user-select: none;
@@ -31,7 +30,6 @@ button, .button {
   white-space: nowrap;
   width: 100%;
   text-align: center;
-
   &:hover,
   &:focus {
     background-color: darken($action-color, 15%);
@@ -42,4 +40,14 @@ button, .button {
     cursor: not-allowed;
     opacity: 0.5;
   }
+}
+
+
+.button, button, label, input {
+  width: 100%;
+  @include setType(3, $base-em-font-size);
+}
+
+.asterisk {
+  color: $action-color;
 }
