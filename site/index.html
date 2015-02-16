@@ -1,13 +1,38 @@
 ---
 layout: default
+title: The Apprenticeship Community
 page_id: home
 js: [home]
 ---
-<h1>The Apprenticeship Community</h1>
 <p>We are a group of practitioners, managers, leaders, and learners dedicated to
 fostering cultures of learning and professional growth in our workplaces.</p>
 
-<div class="apply-to-join">
+<section class="community-rules">
+  <header>
+  <h2>Community Rules</h2>
+  <p>The best way to encourage learning and professional growth is to ensure
+  it's safe to make mistakes. To that end:</p>
+  </header>
+  <main>
+  {% for rule in site.categories.rules %}
+    <article>
+      <header>
+        <h3>{{ rule.title }}</h3>
+      </header>
+      <main>
+        {{ rule.excerpt }}
+      </main>
+    </article>
+  {% endfor %}
+  </main>
+  <footer>
+    <p>We recognize that everyone makes mistake. We are <strong>forgiving, but
+      not lenient</strong>. Repeated abuse of these rules will result in
+    expulsion from the community.</p>
+  </footer>
+</section>
+
+<section class="apply-to-join">
   <div class="applications-open">
     <a class="button" href="https://zee8.typeform.com/to/b9wyG6">Join Us!</a>
   </div>
@@ -18,4 +43,4 @@ fostering cultures of learning and professional growth in our workplaces.</p>
      detailing why you're interested and what qualities you bring to the
      community.
   </div>
-</div>
+</section>
