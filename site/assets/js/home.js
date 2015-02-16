@@ -20,7 +20,14 @@ $(document).ready(function() {
   , category: "Applying"
   , pageSubject: $('body').attr('id')
   });
-  Track.cta(".applications-closed a", "Requested invite", {
+
+  Track.cta(".top .applications-closed a", "Requested invite", {
+    color: "Blue"
+  , category: "Applying"
+  , pageSubject: $('body').attr('id')
+  });
+
+  Track.cta(".bottom .applications-closed a", "Requested invite", {
     color: "Blue"
   , category: "Applying"
   , pageSubject: $('body').attr('id')
