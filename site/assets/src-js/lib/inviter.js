@@ -1,7 +1,16 @@
 (function(AC) {
-  var invite = AC.invite = function(inviteCode, applyToJoinElement, jQuery) {
-    var $ = jQuery;
-    var $applyToJoin = $(applyToJoinElement);
+  // Shows the button to apply if an invite code is provided.
+  // Example:
+  //    > AC.invite("", $(".apply-to-join"));
+  //    < undefined
+  //    > $('.apply-to-join .applications-open').is(':visible')
+  //    < false
+  //    > AC.invite("yourock", $(".apply-to-join"));
+  //    < undefined
+  //    > $('.apply-to-join .applications-open').is(':visible')
+  //    < true
+  //    AC.invite
+  AC.invite = function(inviteCode, $applyToJoin) {
     if(inviteCode === "" || inviteCode === undefined) {
       $applyToJoin.find(".applications-closed").show();
       $applyToJoin.find(".applications-open").hide();

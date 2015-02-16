@@ -10,8 +10,7 @@ build-sass:
 	bin/sass site/assets/scss:site/assets/css
 
 build-js:
-	uglifyjs site/assets/src-js/**/*.js --source-map site/assets/js/site.js.map --source-map-url /assets/js/site.js.map --source-map-root / -c -o site/assets/js/site.js
-
+	(cd site && uglifyjs assets/src-js/**/*.js --source-map assets/js/site.js.map --source-map-url /assets/js/site.js.map --source-map-root / -c -o assets/js/site.js)
 
 release:
 	JEKYLL_ENV=production make build

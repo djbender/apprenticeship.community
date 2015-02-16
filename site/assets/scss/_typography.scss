@@ -1,0 +1,17 @@
+ $font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ $font-serif: Georgia, 'Times New Roman', serif;
+ $font-mono: 'Lucida Console', Monaco, monospace;
+ $text-color: #000;
+ $base-vertical-unit: 6px;
+ $base-line-multi: 4;
+ $base-font-size: 16px;
+ $ms-ratio: 1.414;
+ $paragraph-indent: true;
+ $paragraph-justify: true;
+ $load-typesetted: true;
+
+ @import "typesettings/typesettings"; // Here is the _typesettings.scss partial
+ h1, h2, h3, h4, h5, h6 {
+   text-transform: none;
+ }
+ p { max-width: 100%; }

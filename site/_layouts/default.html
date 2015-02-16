@@ -37,7 +37,19 @@
   }}();
   </script>
 </head>
+{% if page.page_id %}
+<body id="{{ page.page_id }}">
+{% else %}
 <body>
-{{ page.content }}
+{% endif %}
+  <header>
+
+  </header>
+  <main>
+    {{ page.content }}
+  </main>
+  <footer>
+    <p>&copy; 2015 The Apprenticeship Community.</p>
+  </footer>
 </body>
 </html>

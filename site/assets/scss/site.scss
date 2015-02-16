@@ -1,0 +1,25 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "typography";
+@import "buttons";
+@import "home";
+
+body > header, body > main, body > footer {
+  @include outer-container;
+  margin-bottom: emRhythm(3, $ms-down1);
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+  &:before {
+    content: open-quote;
+  }
+  &:after {
+    content: close-quote;
+  }
+}
+
+body > main > section {
+  margin-bottom: emRhythm(3, $ms-down1);
+  @include span-columns(12);
+}

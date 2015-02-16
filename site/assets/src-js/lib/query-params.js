@@ -1,5 +1,13 @@
 (function(AC) {
-  var queryParam = AC.queryParam = function(param) {
+  // Retrieves a query param from the location global.
+  // Example: ?foo=bar&baz=car
+  //    > AC.queryParam(foo)
+  //    < "bar"
+  //    > AC.queryParam(baz)
+  //    < "car"
+  //    > AC.queryParam(bin)
+  //    < ""
+  AC.queryParam = function(param) {
     var name = param.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]")
     ,   regex = new RegExp("[\\?&]" + name + "=([^&#]*)")
     ,   results = regex.exec(location.search);
