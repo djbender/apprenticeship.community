@@ -3,5 +3,12 @@
     @include span-columns(4);
     @include shift(4);
   }
+}
+
+.community-rules {
+  > main article {
+    @include span-columns(6);
+    @include omega(2n);
+  }
 
 }
