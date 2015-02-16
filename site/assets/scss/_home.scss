@@ -1,9 +1,10 @@
-#home .apply-to-join {
+.apply-to-join {
   .applications-open {
     @include span-columns(4);
     @include shift(4);
   }
 }
+
 
 .community-rules {
   > header, > footer {
@@ -12,6 +13,13 @@
   }
 
   > main article {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+}
+
+.about {
+  article {
     @include span-columns(6);
     @include omega(2n);
   }
