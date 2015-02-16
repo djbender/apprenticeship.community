@@ -1,16 +1,43 @@
+build: build-js build-sass build-site
+
 run:
 	bin/foreman start
 
-build: build-js build-sass build-site
+bump:
+	echo -n "Version number? "; read vn; echo $$vn > VERSION
+
+release: clean bump build-production commit-site deploy
+
+clean: clean-site clean-css clean-js
+
+deploy:
+	(cd _site && git push origin gh-pages)
+
+build-production:
+	JEKYLL_ENV=production make build
 
 build-site:
-	bin/jekyll --source site
+	bin/jekyll build --source site
 
 build-sass:
-	bin/sass site/assets/scss:site/assets/css
+	bin/sass --update site/assets/scss/:site/assets/css/
 
 build-js:
 	(cd site && uglifyjs assets/src-js/**/*.js --source-map assets/js/site.js.map --source-map-url /assets/js/site.js.map --source-map-root / -c -o assets/js/site.js)
 
-release:
-	JEKYLL_ENV=production make build
+
+
+clean-site:
+	rm -rf _site/*
+
+clean-css:
+	rm -rf site/assets/css/*
+
+clean-js:
+	rm site/assets/js/site.js.map
+	rm site/assets/js/site.js
+
+
+commit-site:
+	(cd _site && git add -A && git commit -m "Releasing $$(cat ../VERSION)")
+
