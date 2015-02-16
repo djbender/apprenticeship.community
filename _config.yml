@@ -1,0 +1,6 @@
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      segment_token: "FAFG7bcxwMR1l6ljIj1oPLBx9dkSFWlc"
