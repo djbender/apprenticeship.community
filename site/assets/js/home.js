@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  AC.invite(AC.queryParam("invite-code"), $('.apply-to-join'));
+  AC.invite(AC.queryParam("invite-code"), $('.apply-to-join'), AC.URLBuilder.appendParam);
 
   Track.cta(".applications-open .button", "Began application", {
     color: "Blue"

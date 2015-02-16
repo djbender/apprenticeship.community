@@ -10,13 +10,18 @@
   //    > $('.apply-to-join .applications-open').is(':visible')
   //    < true
   //    AC.invite
-  AC.invite = function(inviteCode, $applyToJoin) {
+  AC.invite = function(inviteCode, $applyToJoin, appendParamToUrl) {
+    var $closed = $applyToJoin.find(".applications-closed")
+    var $open = $applyToJoin.find(".applications-open")
     if(inviteCode === "" || inviteCode === undefined) {
-      $applyToJoin.find(".applications-closed").show();
-      $applyToJoin.find(".applications-open").hide();
+      $closed.show();
+      $open.hide();
     } else {
-      $applyToJoin.find(".applications-open").show();
-      $applyToJoin.find(".applications-closed").hide();
+      var initialFormUrl = $open.find('a').attr("href"),
+          formUrlWithInviteCode = appendParamToUrl(initialFormUrl, "invitecode", inviteCode);
+      $open.find('a').attr("href", formUrlWithInviteCode);
+      $open.show();
+      $closed.hide();
     }
   };
 })(window.AC = window.AC || {})
