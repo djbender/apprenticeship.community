@@ -267,6 +267,10 @@ input[type="submit"], button, .button {
   .about article:nth-child(2n+1) {
     clear: left; }
 
+p + p {
+  margin-top: 0;
+  text-indent: 0; }
+
 q {
   quotes: "“" "”" "‘" "’"; }
   q:before {
