@@ -1,27 +1,22 @@
 (function(AC) {
-  // Shows the button to apply if an invite code is provided.
+  // Appends inviteCode to set of elements href's
   // Example:
-  //    > AC.invite("", $(".apply-to-join"));
+  //    > AC.invite("you-rock", $(".apply-to-join a"));
   //    < undefined
-  //    > $('.apply-to-join .applications-open').is(':visible')
-  //    < false
-  //    > AC.invite("yourock", $(".apply-to-join"));
-  //    < undefined
-  //    > $('.apply-to-join .applications-open').is(':visible')
-  //    < true
-  //    AC.invite
-  AC.invite = function(inviteCode, $applyToJoin, appendParamToUrl) {
-    var $closed = $applyToJoin.find(".applications-closed")
-    var $open = $applyToJoin.find(".applications-open")
+  //    > $(".apply-to-join a").attr('href')
+  //    < ["example.com?inviteCode=you-rock", "example.com?foo&inviteCode=you-rock"]
+  AC.invite = function(inviteCode, $links, options) {
+    options = options || {};
     if(inviteCode === "" || inviteCode === undefined) {
-      $closed.show();
-      $open.hide();
+      return;
     } else {
-      var initialFormUrl = $open.find('a').attr("href"),
-          formUrlWithInviteCode = appendParamToUrl(initialFormUrl, "invitecode", inviteCode);
-      $open.find('a').attr("href", formUrlWithInviteCode);
-      $open.show();
-      $closed.hide();
+      var appendParamToUrl = options.appendParamToUrl || AC.URLBuilder.appendParam;
+      $links.each(function(index, link) {
+        var $link = $(link);
+        var initialUrl = $link.attr("href"),
+            urlWithInviteCode = appendParamToUrl(initialUrl, "invitecode", inviteCode);
+        $link.attr("href", urlWithInviteCode);
+      });
     }
   };
 })(window.AC = window.AC || {})
