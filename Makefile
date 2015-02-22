@@ -40,5 +40,6 @@ clean-js:
 
 
 commit-site:
+	git tag v$$(cat VERSION)
 	(cd _site && git checkout gh-pages && git add -A && git commit -m "Releasing $$(cat ../VERSION)")
 
