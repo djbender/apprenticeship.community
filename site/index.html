@@ -7,26 +7,19 @@ js: [home]
 <section class="about">
   <article>
     <main>
-      <p>We're a community of practice fostering professional cultures of
-      learning and growth. Together we explore:</p>
+      <p>We're a community of practitioners fostering
+      work cultures of learning and growth. Together
+      we explore:</p>
       <ul>
-        <li>Techniques and practices for learning at work.</li>
-        <li>Ways to support our team-members continued learning.</li>
-        <li>Principles and strategies for learning quickly and effectively.</li>
+        <li>Techniques and practices for learning at
+          work.</li>
+        <li>Ways to support our team members' continued
+          learning.</li>
+        <li>Principles and strategies for learning quickly
+          and effectively.</li>
       </ul>
       <section class="top apply-to-join">
-        <div class="applications-open">
-          <a class="button" href="https://zee8.typeform.com/to/b9wyG6">Join Us!</a>
-        </div>
-        <div class="applications-closed">
-          Sorry! Applications are currently closed. If you <strong>really,
-            really</strong> want to participate, <a href="mailto:
-                                                    yo+apprenticeship-community@zincma.de">send
-                                                    us an e-mail</a> explaining
-                                                  why you're interested and
-                                                  what qualities you bring to
-                                                  the community.
-        </div>
+        {% include application-form.html %}
       </section>
     </main>
   </article>
@@ -76,14 +69,5 @@ js: [home]
 </section>
 
 <section class="bottom apply-to-join">
-  <div class="applications-open">
-    <a class="button" href="https://zee8.typeform.com/to/b9wyG6">Join Us!</a>
-  </div>
-  <div class="applications-closed">
-    Sorry! Applications are currently closed. If you <strong>really,
-       really</strong> want to participate, <a
-       href="mailto: yo+apprenticeship-community@zincma.de">send us an e-mail</a>
-     detailing why you're interested and what qualities you bring to the
-     community.
-  </div>
+  {% include application-form.html %}
 </section>
