@@ -36,8 +36,8 @@ clean-css:
 	rm -rf site/assets/css/*
 
 clean-js:
-	rm site/assets/js/site.js.map
-	rm site/assets/js/site.js
+	rm -f site/assets/js/site.js.map
+	rm -f site/assets/js/site.js
 
 
 commit-site:
