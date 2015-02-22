@@ -25,10 +25,10 @@
       analytics.load("{{ page.segment_token}}");
     {% endif %}
 
-    {% if page.track_as && page.meta %}
-      analytics.page("{{ page.track_as }}", {{ page.meta | jsonify }});
-    {% elsif page.track_as %}
-      analytics.page("{{ page.track_as }}")
+    {% if page.page_id && page.meta %}
+      analytics.page("{{ page.page_id }}", {{ page.meta | jsonify }});
+    {% elsif page.page_id %}
+      analytics.page("{{ page.page_id }}")
     {% else %}
       analytics.page();
     {% endif %}
