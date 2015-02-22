@@ -7,9 +7,9 @@ js: [home]
 <section class="about">
   <article>
     <main>
-      <p>We're a community of practitioners fostering
-      work cultures of learning and growth. Together
-      we explore:</p>
+      <p>We're an online publication and community of
+      practitioners fostering work cultures of learning and
+      growth. Together we explore:</p>
       <ul>
         <li>Techniques and practices for learning at
           work.</li>
@@ -67,6 +67,37 @@ js: [home]
          makes mistakes</a>. We are <strong>forgiving, but not
        lenient</strong>. Repeated abuse of these rules will result in
      expulsion from the community.</p>
+  </footer>
+</section>
+
+<section class="faqs">
+  <header>
+  <h2>Frequently Asked Questions</h2>
+  <p>Your trust is important. We know you've got questions
+  and we'd like to answer them. If you have other questions,
+  please <a
+         href="yo+apprenticeship.community@zincma.de">email
+         us</a> or <a
+       href="http://twitter.com/zspencer">Send Zee a
+       Tweet</a></p>
+  </header>
+  <main>
+  {% for faq in site.categories.faqs %}
+    <article>
+      <header>
+        <h3>{{ faq.title }}</h3>
+      </header>
+      <main>
+        {{ faq.content }}
+      </main>
+    </article>
+  {% endfor %}
+  </main>
+  <footer>
+    <p>If you still have questions, send us <a
+      href="yo+apprenticeship-community@zincma.de">an
+      email</a> or <a
+    href="http://twitter.com/zspencer">tweet at Zee</a>.
   </footer>
 </section>
 

@@ -5,6 +5,11 @@
 @import "home";
 
 
+p + p {
+  margin-top: 0;
+  text-indent: 0;
+}
+
 q {
   quotes: "“" "”" "‘" "’";
   &:before {
